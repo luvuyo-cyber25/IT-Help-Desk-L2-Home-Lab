@@ -6,7 +6,7 @@ This comprehensive lab simulates a full Level 2 IT Helpdesk / Junior Systems Adm
 The lab progresses logically from basic server setup through advanced administration, security, remote support, and automation. 
 
 **Features**  
-- Complete Windows domain deployment (Server 2016 → Domain Controller with `kevtech.com` / `kevcaftec.com`)  
+- Complete Windows domain deployment (Server 2016 → Domain Controller with `VUYOTECH.COM`)  
 - Active Directory management: OUs, users, groups, delegation of control, recycle bin  
 - Group Policy: Password/lockout policies, restrictions (e.g., disable Task Manager)  
 - File server: Departmental shares + automated home drives with group-based NTFS permissions  
@@ -16,7 +16,58 @@ The lab progresses logically from basic server setup through advanced administra
 - Troubleshooting: Account lockouts/unlocks, password resets, gpresult, net use, Account Lockout Status tool  
 - Software & inventory: PDQ Deploy (silent installs), PDQ Inventory (hardware/software reporting)  
 - Ticketing & ITSM: Spiceworks help desk workflow demonstration  
-- Security best practices: Least privilege, inheritance disabling, enforced policies  
+- Security best practices: Least privilege, inheritance disabling, enforced policies
+
+## Screenshots
+
+### Active Directory Domain Overview
+![Active Directory Domain Overview](Active%20Directory%20Domain%20Overview.png)  
+![Active Directory Domain Overview Alt 1](Active%20Directory%20Domain%20Overview%20Alt%201.png)  
+Shows the full domain structure with OUs, users, and groups.
+
+### Group Policy Configuration
+![Group Policy Account Lockout](Group%20Policy%20Account%20Lockout.png)  
+![Group Policy User Restrictions](Group%20Policy%20User%20Restrictions.png)  
+Displays account lockout policy (6 attempts, 30 min) and user restrictions (e.g., disabled Task Manager).
+
+### OU Design and Delegation
+![OU Design](OU%20Design.png)  
+Shows organizational units, delegation of control, and password reset permissions.
+
+### Network Drive Mapping
+![Network Drive Mapping](Network%20Drive%20Mapping.png)  
+Mapped departmental drives (HR, Personal) and home directories with proper NTFS permissions.
+
+### Print Server Configuration
+![Print Server Permissions](Print%20Server%20Permissions.png)  
+![Print Server Overview](Print%20Server%20Overview.png)  
+Demonstrates print server setup and group-based access control for printers.
+
+### Client Domain Join
+![Client Domain Join](Client%20Domain%20Join.png)  
+![Client Domain Join Alt 1](Client%20Domain%20Join%20Alt%201.png)  
+Evidence of clients successfully joining the domain and appearing in ADUC.
+
+### Remote Desktop Support
+![Remote Desktop RDP Session](Remote%20Desktop%20RDP%20Session.png)  
+![Remote Desktop RDP Session Alt 1](Remote%20Desktop%20RDP%20Session%20Alt%201.png)  
+Shows remote support session via RDP with administrative access.
+
+### PDQ Deploy Software Deployment
+![PDQ Deploy Software Deployment](PDQ%20Deploy%20Software%20Deployment.png)  
+Demonstrates silent software deployment (e.g., Zoom) to domain clients.
+
+### PDQ Inventory – Asset Management
+![PDQ Inventory System Details](PDQ%20Inventory%20System%20Details.png)  
+![PDQ Inventory Hardware Software Report](PDQ%20Inventory%20Hardware%20Software%20Report.png)  
+Shows hardware/software inventory, updates, and reports for endpoint management.
+
+### IT Support & Ticketing
+![Spiceworks Ticketing Workflow](Spiceworks%20Ticketing%20Workflow.png)  
+![IT Support Troubleshooting](IT%20Support%20Troubleshooting.png)  
+Highlights ticketing workflow, account lockout troubleshooting, and remote session handling.
+
+
 
 **Installation & Lab Build Steps** (High-Level Summary)  
 1. Installed VirtualBox → created isolated Host-only network  
