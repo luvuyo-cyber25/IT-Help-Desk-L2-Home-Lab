@@ -1,85 +1,83 @@
-# IT Helpdesk Lab
+# IT Helpdesk Level 2 Lab – Windows Server, Active Directory & Enterprise Support
 
-## Project Overview
-This lab simulates a real-world IT Helpdesk environment using Windows Server 2022, Active Directory Domain Services (AD DS), Group Policy Management, Windows 10/11 clients, file sharing, remote administration, and patch management. It demonstrates user management, domain configuration, network setup, endpoint onboarding, SMB permissions, and enterprise-style troubleshooting.
+**Project Overview**  
+This comprehensive lab simulates a full Level 2 IT Helpdesk / Junior Systems Administrator role in a corporate environment. Built entirely in VirtualBox, I deployed a Windows Server 2016 Domain Controller, configured Active Directory from scratch, managed users/groups/OUs/policies, set up file shares/printers, joined client workstations, implemented security controls, performed remote troubleshooting, deployed software with PDQ tools, worked with ticketing systems, and applied delegation of control. 
 
-I built this lab to understand core Helpdesk/IT Support workflows such as domain joins, GPO enforcement, account management, remote access, and system updates.
+The lab progresses logically from basic server setup through advanced administration, security, remote support, and automation. 
 
-## Features
-Active Directory Setup
+**Features**  
+- Complete Windows domain deployment (Server 2016 → Domain Controller with `kevtech.com` / `kevcaftec.com`)  
+- Active Directory management: OUs, users, groups, delegation of control, recycle bin  
+- Group Policy: Password/lockout policies, restrictions (e.g., disable Task Manager)  
+- File server: Departmental shares + automated home drives with group-based NTFS permissions  
+- Printer management: Print Server role, AD-published printers, group permissions  
+- Client management: Domain join, RSAT tools, static IPs, Host-only networking  
+- Remote support: RDP, Quick Assist, admin shares, Remote Registry, Zoho-style sessions  
+- Troubleshooting: Account lockouts/unlocks, password resets, gpresult, net use, Account Lockout Status tool  
+- Software & inventory: PDQ Deploy (silent installs), PDQ Inventory (hardware/software reporting)  
+- Ticketing & ITSM: Spiceworks help desk workflow demonstration  
+- Security best practices: Least privilege, inheritance disabling, enforced policies  
 
-- Installed Windows Server 2022 and promoted it to a Domain Controller
-- Created a new forest and domain: vuyotech.com
-- Created AD users (e.g., Walter, Luvuyo) with proper account configurations
-- Created AD groups (e.g., Tech) and assigned users
+Here are some visual examples of key components from the lab:
 
-Domain & Network Configuration
+Active Directory structure with OUs (HR, IT, Consultants) and user accounts:
 
-- Configured VirtualBox networking (Host-Only, NAT, Bridged)
-- Assigned static IPs for server and clients (10.x.x.x network)
-- Joined Windows 10 machine to the vuyotech.com domain
-- Verified connectivity using ping and DNS lookups
+Group Policy configuration (account lockout settings):
 
-Group Policy Management
+Remote Desktop / RDP session to a client machine:
 
-- Set password expiration (30 days)
-- Configured account lockout threshold (3 attempts, 30-min lockout)
-- Tested lockout behavior and account recovery
-- Modified user logon hours and account expiration settings
+PDQ Inventory dashboard showing detailed computer info (hardware, software, logged-in user):
 
-Remote Administration
+Print Management console with shared network printer:
 
-- Enabled Remote Desktop on the server
-- Used Windows 10 machine to connect via RDP using domain credentials
+Spiceworks help desk ticketing interface:
 
-SMB File Sharing & Permissions
+**Installation & Lab Build Steps** (High-Level Summary)  
+1. Installed VirtualBox → created isolated Host-only network  
+2. Deployed Windows Server 2016 Datacenter → static IP → promoted to Domain Controller  
+3. Configured AD: OUs, users (helpdesk, Patty, Scott), security groups, delegation (password reset only)  
+4. Applied Group Policies: Lockout (4 attempts), password age (90 days), restrictions (disable Task Manager)  
+5. Created Windows 10 Pro clients → RSAT tools → domain join  
+6. Set up file shares (HR, Personal) + home drives (%username%) with least-privilege NTFS  
+7. Installed Print Server role → shared/published printer → group permissions  
+8. Performed remote support: RDP, Quick Assist, admin shares, Remote Registry  
+9. Deployed software silently with PDQ Deploy (e.g., Zoom)  
+10. Used PDQ Inventory: Hardware/software inventory, reports, remote actions (restart, MMC)  
+11. Demonstrated ticketing workflow in Spiceworks + remote session (Zoho-style)  
+12. Troubleshot: Lockouts (Account Lockout Status tool), resets, gpupdate / gpresult  
 
-- Created SMB share vuyotech on the server
-- Created subfolders: Tech, HR, IT
-- Applied NTFS & Share permissions:
-- Removed “Everyone”
-- Assigned the Tech group modify/read access
-- Tested access from Windows 10 as user Walter
-- Demonstrated that folder changes synced across clients (e.g., created “hack.txt”)
+**Technologies & Skills Gained**
 
-User & Computer Management
+**Tools & Technologies**  
+- VirtualBox  
+- RSAT tools  
+- Account Lockout Status Tool  
+- RDP  
+- PDQ  
+- Spiceworks  
+- Windows Server 2016  
+- Active Directory Domain Services (AD DS)  
+- Active Directory Users and Computers (ADUC)  
+- Group Policy Management Console (GPMC)  
+- Command Prompt (CMD)  
+- Print Management Console  
+- Server Manager  
 
-- Disabled/Enabled accounts
-- Forced password resets
-- Viewed user policies using net user /domain
-- Managed account lockouts and restored user access
+**Skills Gained**  
+- Virtualization  
+- Server Administration  
+- Active Directory  
+- Network Configuration  
+- Ticketing System  
+- Group Policy Management  
+- DNS  
+- Network Drive Mapping  
+- TCP/IP  
+- User Account Lifecycle Management  
+- Organizational Unit (OU) Design  
+- NTFS & Share Permissions Configuration  
+- Remote Desktop & Support  
+- Account Lockout Troubleshooting  
+- Software Deployment  
 
-Patch & Endpoint Management
-
-- Installed Action1 RMM agent
-- Onboarded server and endpoints to Action1 console
-- Deployed pending Windows updates remotely
-- Tested deployment using both single-agent install and domain-wide deployer
-
-Virtualization & System Administration
-
-- Multi-VM setup on VirtualBox
-- Used shared folders between host and server
-- Installed Guest Additions and mounted shared resources
-- Performed network reconfiguration across NAT/Bridged/Host-Only environments
-
-Tools & Skills Gained
-Technical Skills
-
-Active Directory Administration: Users, groups, OUs, domain join
-
-Group Policy Management: Security policies, password rules, lockout policy
-
-Networking: DNS, static IPs, ping testing, TCP/IPv4 configuration
-
-Remote Administration: RDP, domain authentication
-
-File Sharing (SMB): NTFS permissions, share permissions, folder security
-
-Patch Management: Action1 RMM deployment and update management
-
-Troubleshooting: Account lockouts, login errors, permission issues
-
-Virtualization: VirtualBox networking modes, VM provisioning
-
-Windows Client Support: Windows 10/11 setup and domain integration
+This lab demonstrates end-to-end ownership of a Windows domain environment, making it highly relevant for **IT Helpdesk L2**, **Desktop Support**, **Junior SysAdmin**, and **Systems Engineer** roles.
