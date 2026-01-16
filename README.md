@@ -18,20 +18,6 @@ The lab progresses logically from basic server setup through advanced administra
 - Ticketing & ITSM: Spiceworks help desk workflow demonstration  
 - Security best practices: Least privilege, inheritance disabling, enforced policies  
 
-Here are some visual examples of key components from the lab:
-
-Active Directory structure with OUs (HR, IT, Consultants) and user accounts:
-
-Group Policy configuration (account lockout settings):
-
-Remote Desktop / RDP session to a client machine:
-
-PDQ Inventory dashboard showing detailed computer info (hardware, software, logged-in user):
-
-Print Management console with shared network printer:
-
-Spiceworks help desk ticketing interface:
-
 **Installation & Lab Build Steps** (High-Level Summary)  
 1. Installed VirtualBox → created isolated Host-only network  
 2. Deployed Windows Server 2016 Datacenter → static IP → promoted to Domain Controller  
